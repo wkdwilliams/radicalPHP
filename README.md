@@ -20,6 +20,8 @@ This is the folder our web server will be using. This contains our front-end cod
 This folder contains basic files such as JSON files, log files etc... We don't need a relational database to store these files.
 ### Vendor
 This folder contains our 3rd-party, open-source PHP code that is obtained from the enthusiastic software development community Composer.
+### tests
+You may store your unit tests in this directory.
 
 ## Routing
 
@@ -55,3 +57,9 @@ Controllers respond to user actions. They are stored in the `App/Controllers` fo
 Controller classes contain methods that are the actions. To create an action, add the **`Action`** suffix to the method name.
 
 You can access route parameters (for example the **id** parameter shown in the route examples above) in actions via the `$this->route_params` property.
+
+## Unit Tests
+
+Unit tests should be stored in the `tests/` folder.
+
+This framework uses PHPUnit. Please refer to their documentation for how to use the unit testing [here](https://phpunit.de/getting-started/phpunit-8.html).
