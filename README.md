@@ -1,5 +1,7 @@
 # RadicalPHP Framework
-A lightweight, easy-to-use PHP framework for rapid application development
+A lightweight, easy-to-use PHP framework for rapid application development.
+
+To see this framework in action, visit [https://blog.lewiswilliams.info/](https://blog.lewiswilliams.info/)
 
 ## Folder Structure
 
