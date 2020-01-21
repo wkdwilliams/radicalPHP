@@ -1,4 +1,4 @@
-# radicalPHP Framework
+# RadicalPHP Framework
 A lightweight, easy-to-use PHP framework for rapid application development
 
 ## Folder Structure
