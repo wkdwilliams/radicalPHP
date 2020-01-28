@@ -15,7 +15,7 @@ class Home extends Controller
 
     public function outputJSON()
     {
-      return $this->response->json([
+      $this->response->json([
         "First Name" => "Lewis",
         "Last Name"  => "Williams"
       ]);
