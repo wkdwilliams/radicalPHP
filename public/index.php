@@ -1,5 +1,13 @@
 <?php
 
+if(!file_exists(dirname(__DIR__) . '/vendor/'))
+{
+    echo "<h1>Composer Error</h1>".
+         "<p>You must install the dependencies via Composer with the following command;</p>".
+         "<code style='background-color: burlywood'>composer install</code>";
+    return;
+}
+
 session_start();
 
 require dirname(__DIR__) . '/vendor/autoload.php';
