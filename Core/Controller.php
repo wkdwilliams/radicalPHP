@@ -6,8 +6,8 @@ use Core\Response;
 
 abstract class Controller
 {
-    protected $response;
-    protected $route_params = [];
+    protected Responses $response;
+    protected array $route_params = [];
 
     public function __construct($route_params)
     {

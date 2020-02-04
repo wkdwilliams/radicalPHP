@@ -1,7 +1,9 @@
 {
     "require": {
         "twig/twig": "~2.0",
-        "athari/yalinqo": "^2.4"
+        "athari/yalinqo": "^2.4",
+      "ext-pdo": "*",
+      "ext-json": "*"
     },
     "autoload": {
         "psr-4": {
