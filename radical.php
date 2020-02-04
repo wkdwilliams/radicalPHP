@@ -10,7 +10,7 @@ if(count($argv) == 1)
     return;
 }
 
-(new Kernel())->command(implode(from($argv)
+(new Kernel())->command(implode(" ", from($argv)
     ->where('$c ==> $c != "radical.php"')
-    ->toArray(), " ")
+    ->toArray())
 );
