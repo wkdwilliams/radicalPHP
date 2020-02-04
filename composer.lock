@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6642f40efe957e57abf348e4a34bc9aa",
-    "content-hash": "9cf2f04a6eed5828c97480b9f2490770",
+    "hash": "31c4680a36aa5ed340d5b8151f3d0ce3",
+    "content-hash": "c2b176397d58e9c7d7c3038c1072c131",
     "packages": [
         {
             "name": "athari/yalinqo",
@@ -1711,6 +1711,9 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-pdo": "*",
+        "ext-json": "*"
+    },
     "platform-dev": []
 }
