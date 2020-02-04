@@ -52,16 +52,9 @@ class Router
         if ($this->match($url)) {
             $controller = $this->params['controller'];
             $controller = $this->convertToStudlyCaps($controller);
+            $controller = $this->getNamespace() . $controller;
 
-            if(class_exists($this->getNamespace() . $controller))
-            {
-                $controller = $this->getNamespace() . $controller;
-            }
-            else if(class_exists($this->getNamespace(false) . $controller))
-            {
-                $controller = $this->getNamespace(false) . $controller;
-            }
-            else
+            if(!class_exists($controller))
             {
                 throw new \Exception("Controller class $controller not found");
             }
@@ -125,9 +118,9 @@ class Router
         return $url;
     }
 
-    protected function getNamespace($isController=true)
+    protected function getNamespace()
     {
-        $namespace = $isController ? 'App\Controllers\\' : 'App\Middleware\\';
+        $namespace = 'App\Controllers\\';
 
         if (array_key_exists('namespace', $this->params)) {
             $namespace .= $this->params['namespace'] . '\\';
