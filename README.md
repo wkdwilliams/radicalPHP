@@ -63,3 +63,19 @@ You can access route parameters (for example the **id** parameter shown in the r
 Unit tests should be stored in the `tests/` folder.
 
 This framework uses PHPUnit. Please refer to their documentation for how to use the unit testing [here](https://phpunit.de/getting-started/phpunit-8.html).
+
+## Framework Commands
+
+It is possible to quickly create controllers and models using the in-built commands.
+
+To create a controller, run the command:
+
+```
+php radical.php create controller HelloController
+```
+
+To create a model, run the command:
+
+```
+php radical.php create model HelloModel
+```
