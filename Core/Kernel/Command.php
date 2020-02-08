@@ -36,6 +36,21 @@ class Command
                     return;
                 }
             }
+            else if($wordArray[0] == "list")
+            {
+                if($wordArray[1] == "controllers" || !isset($wordArray[1]))
+                {
+                    for($i=0;$i<10;$i++) echo $i==5 ? " Controllers " : "-";
+                    echo "\n".implode("\n", $this->kernel->getControllers())."\n\n";
+                }
+                if($wordArray[1] == "models" || !isset($wordArray[1]))
+                {
+                    for($i=0;$i<10;$i++) echo $i==5 ? " Models " : "-";
+                    echo "\n".implode("\n", $this->kernel->getModels())."\n\n";
+                }
+
+                return;
+            }
 
             die(self::UNRECOGNIZED_ERROR);
         }
