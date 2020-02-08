@@ -8,6 +8,12 @@ class Router
     protected array $routes = [];
     protected array $params = [];
 
+    function __construct()
+    {
+        // Add our built-in route for the resources.
+        $this->add('resources/{random:\d+}/scss/', ['controller' => 'Scss', 'action' => 'compile']);
+    }
+
     public function add($route, $params = [])
     {
         $route = preg_replace('/\//', '\\/', $route);
@@ -15,6 +21,7 @@ class Router
         $route = preg_replace('/{([a-z]+):([^}]+)}/', '(?P<\1>\2)', $route);
         $route = '/^' . $route . '$/i';
         $this->routes[$route] = $params;
+
     }
 
     public function getRoutes()
@@ -52,7 +59,8 @@ class Router
         if ($this->match($url)) {
             $controller = $this->params['controller'];
             $controller = $this->convertToStudlyCaps($controller);
-            $controller = $this->getNamespace() . $controller;
+            $controller = @explode("/", $url)[0] != "resources" ?               // Add our resources controller
+                $this->getNamespace() . $controller : "\\Core\\".$controller;   // Using our reserved route
 
             if(!class_exists($controller))
             {

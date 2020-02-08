@@ -2,6 +2,8 @@
 
 namespace Core\Kernel;
 
+use \Core\Utils\Directory;
+
 Class Kernel
 {
     private $controllers;
@@ -11,13 +13,8 @@ Class Kernel
     {
         $app = dirname(__DIR__) . "/../App";
 
-        $this->controllers = from(scandir($app."/Controllers/"))
-            ->where('$classes ==> $classes != "." && $classes != ".."')
-            ->toArray();
-
-        $this->models = from(scandir($app."/Models/"))
-            ->where('$classes ==> $classes != "." && $classes != ".."')
-            ->toArray();
+        $this->controllers  = (new Directory($app."/Controllers/"))->getAllFiles();
+        $this->models       = (new Directory($app."/Models/"))->getAllFiles();
     }
 
     public function command($command)
