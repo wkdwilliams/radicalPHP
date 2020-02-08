@@ -16,6 +16,8 @@ This contains our models, views and controllers.
 This contains the core code.
 ### Public
 This is the folder our web server will be using. This contains our front-end code, and our index.php (main file the web browser goes for).
+### resources
+This folder contains the scss files. Any scss file stored inside this folder will be compiled at given to the front-end.
 ### storage
 This folder contains basic files such as JSON files, log files etc... We don't need a relational database to store these files.
 ### Vendor
@@ -78,4 +80,11 @@ To create a model, run the command:
 
 ```
 php radical.php create model HelloModel
+```
+
+## Scss Files
+
+All scss files are stored inside `resources/scss`. In order to use them, you must place the following code inside your `<head>` tags;
+```html
+<link rel="stylesheet" href="{{ SCSS }}">
 ```
